@@ -59,25 +59,25 @@ Direct online investment has become popular and is replacing traditional method 
 ### Mockups
 
 #### Home Page
-![](Homepage.png)
+![](./src/assets/mockup/Homepage.png)
 
 #### Single Stock Detail Page
-![](Single-Stock-Detail-Page.png)
+![](./src/assets/mockup/Single-Stock-Detail-Page.png)
 
 #### MyPortfolio Create Page
-![](MyPortfolio-Creating-Page.png)
+![](./src/assets/mockup/MyPortfolio-Creating-Page.png)
 
 #### MyPortfolio Analysis Page
-![](MyPortfolio-Analysis-Page.png)
+![](./src/assets/mockup/MyPortfolio-Analysis-Page.png)
 
 #### Login Page
-![](Log-In-Page.png)
+![](./src/assets/mockup/Log-In-Page.png)
 
 #### Sign Up Page
-![](Sign-up-Page.png)
+![](./src/assets/mockup/Sign-up-Page.png)
 
 #### Data
-![](Data.png)
+![](./src/assets/mockup/Data.png)
 
 
 ### Endpoints
