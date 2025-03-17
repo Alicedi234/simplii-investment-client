@@ -78,7 +78,10 @@ Direct online investment has become popular and is replacing traditional method 
 
 #### Data
 ![](./src/assets/mockup/Data.png)
+###
 
+Data Structure:
+1. Data 
 
 ### Endpoints
 
