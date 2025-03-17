@@ -5,6 +5,8 @@ import MyPortfolioPage from "./pages/MyPortfolioPage/MyPortfolioPage";
 import MyPortfolioAnalysisPage from "./pages/MyPortfolioAnalysisPage/MyPortfolioAnalysisPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
+import Header from "./component/Header/Header";
+import Footer from "./component/Footer/Footer";
 
 
 
