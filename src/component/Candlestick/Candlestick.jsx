@@ -1,9 +1,9 @@
 import {Chart, registerables} from "chart.js";
-import {FinancialController, CandlestickElement} from "chartjs-chart-financial";
+import "chartjs-chart-financial";
 import {Chart as ReactChart} from "react-chartjs-2";
 
 //chats have to be registered before using them
-Chart.register(...registerables, FinancialController, CandlestickElement);
+Chart.register(...registerables);
 
 export default function CandlestickChart({data}){
 
