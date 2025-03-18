@@ -7,13 +7,14 @@ import "chartjs-adapter-date-fns";
 //chats have to be registered before using them
 Chart.register(...registerables, CandlestickController, CandlestickElement, OhlcController, OhlcElement);
 
-export default function Candlestick({data}){
+export default function Candlestick({dailydata}){
 
+const last14 = dailydata.slice(-14);
 const chartData = {
   datasets:[
     {
       label: "K line",
-      data: data.map((d)=>(
+      data: last14.map((d)=>(
         {
           x:new Date(d.time),
           o:d.open,
@@ -23,6 +24,7 @@ const chartData = {
         })),
         type:"candlestick",
         borderColor:"black",
+        barThickness: 10,
         borderWidth:1
     }
   ]
@@ -33,18 +35,23 @@ const chartData = {
         type: "time",
         time:{
           tooltipFormat: "MMM dd HH:mm",
+          unit: "day",
         }
       },
       y: {
         beginAtZero: false,
-
       }
     }
   }
   return (
-    <div>
-      <ReactChart type = "candlestick" data ={chartData} options={options} />
-    </div>
+    <div className = "candlestick__container">
+      {dailydata.length >0 ? (
+        <ReactChart type = "candlestick" data ={chartData} options={options} />
+      ) : (
+        <p className = "candlestick__loading">Loading data...</p>
+      )
+    }
+      </div>
   );
 
 }
