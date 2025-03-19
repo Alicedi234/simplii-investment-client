@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import Candlestick from "../../component/Candlestick/Candlestick";
 import LineChart from "../../component/LineChart/LineChart";
+import StockSearch from "../../component/StockSearch/StockSearch";
 
 
 
@@ -9,7 +10,7 @@ export default function HomePage(){
 
   const [intradata, setIntraData] = useState([]);
   const [dailydata, setDailyData] = useState([]);
-  const [fundadata, setFundaData] = useState([]);
+
 
   const url_intra = "http://127.0.0.1:8000/api/intrastock?symbol=AAPL";
   const url_daily = "http://127.0.0.1:8000/api/dailystock?symbol=AAPL";
@@ -42,6 +43,7 @@ export default function HomePage(){
 
     <>
   <h1>this is homePage</h1>
+    <StockSearch />
     <Candlestick dailydata = {dailydata}/>
     <LineChart dailydata = {dailydata} />
     </>
