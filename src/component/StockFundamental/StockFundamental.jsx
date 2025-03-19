@@ -1,21 +1,26 @@
 import {useState, useEffect} from "react";
 
-export function StockFundamental ({}){
+export default function StockFundamental ({symbol}){
 
   const [fundadata, setFundadata] = useState([])
+  const baseUrl = import.meta.env.VITE_STOCK_API_BASE_URL;
+  const urlfunda = `${baseUrl}/fundastock`;
+
+
 
   //get fundamental data
-  const url_funda = "http://127.0.0.1:8000/api/fundastock?symbol=AAPL"
+  const url_funda = `${baseUrl}/fundastock`
   useEffect (()=>{
     const fetchData = async () =>{
-      const response = await axios.get(url_funda);
+      const response = await axios.get(urlfunda, {params: { symbol } });
       console.log(response.data);
       setFundadata(response.data);
     }
     fetchData();
-  },[]);
+  },[symbol, url]);
   return(
     <div>
+      <h2>Fundamentals for {fundadata.symbol}</h2>
       <ul>
         <li>{fundadata.symbol}</li>
         <li>{fundadata.name}</li>

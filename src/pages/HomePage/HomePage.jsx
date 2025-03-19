@@ -35,15 +35,7 @@ export default function HomePage(){
     fetchData();
   },[]);
 
-  //get fundamental data
-  useEffect (()=>{
-    const fetchData = async () =>{
-      const response = await axios.get(url_funda);
-      console.log(response.data);
-      setFundaData(response.data)
-    }
-    fetchData();
-  },[]);
+
 
   
   return(
