@@ -3,46 +3,69 @@ import "chartjs-chart-financial";
 import  {CandlestickController, CandlestickElement, OhlcController, OhlcElement} from 'chartjs-chart-financial';
 import {Chart as ReactChart} from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
+import axios from "axios";
+import {useState, useEffect} from "react";
 
 //chats have to be registered before using them
 Chart.register(...registerables, CandlestickController, CandlestickElement, OhlcController, OhlcElement);
 
-export default function Candlestick({dailydata}){
+export default function Candlestick({symbol}){
 
-const last14 = dailydata.slice(-14);
-const chartData = {
-  datasets:[
-    {
-      label: "K line",
-      data: last14.map((d)=>(
-        {
-          x:new Date(d.time),
-          o:d.open,
-          h:d.high,
-          l:d.low,
-          c:d.close,
-        })),
-        type:"candlestick",
-        borderColor:"black",
-        barThickness: 10,
-        borderWidth:1
+
+  const [dailydata, setDailydata] = useState([])
+  const baseUrl = import.meta.env.VITE_STOCK_API_BASE_URL;
+  const urldaily = `${baseUrl}/dailystock`
+
+
+
+
+  useEffect(() =>{
+    const fetchData = async () =>{
+      const response = await axios.get(urldaily, {params: { symbol}});
+      console.log(response.data);
+      setDailydata(response.data);
     }
-  ]
-}
-  const options = {
-    scales: {
-      x: {
-        type: "time",
-        time:{
-          tooltipFormat: "MMM dd HH:mm",
-          unit: "day",
+    fetchData();
+  },[symbol, urldaily]);
+
+
+
+
+
+  const last14 = dailydata.slice(-14);
+  const chartData = {
+    datasets:[
+      {
+        label: "K line",
+        data: last14.map((d)=>(
+          {
+            x:new Date(d.time),
+            o:d.open,
+            h:d.high,
+            l:d.low,
+            c:d.close,
+          })),
+          type:"candlestick",
+          borderColor:"black",
+          barThickness: 10,
+          borderWidth:1
+      }
+    ]
+  }
+    const options = {
+      scales: {
+        x: {
+          type: "time",
+          time:{
+            tooltipFormat: "MMM dd HH:mm",
+            unit: "day",
+          }
+        },
+        y: {
+          beginAtZero: false,
         }
-      },
-      y: {
-        beginAtZero: false,
       }
     }
-  }
   return (
     <div className = "candlestick__container">
       {dailydata.length >0 ? (

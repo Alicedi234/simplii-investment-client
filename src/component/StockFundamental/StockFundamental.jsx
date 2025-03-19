@@ -1,15 +1,14 @@
 import {useState, useEffect} from "react";
+import axios from "axios";
 
 export default function StockFundamental ({symbol}){
 
-  const [fundadata, setFundadata] = useState([])
   const baseUrl = import.meta.env.VITE_STOCK_API_BASE_URL;
+  const [fundadata, setFundadata] = useState([])
   const urlfunda = `${baseUrl}/fundastock`;
 
-
-
-  //get fundamental data
-  const url_funda = `${baseUrl}/fundastock`
+  
+  // get funda data
   useEffect (()=>{
     const fetchData = async () =>{
       const response = await axios.get(urlfunda, {params: { symbol } });
@@ -17,20 +16,23 @@ export default function StockFundamental ({symbol}){
       setFundadata(response.data);
     }
     fetchData();
-  },[symbol, url]);
+  },[symbol, urlfunda]);
+  
+  
+
   return(
     <div>
       <h2>Fundamentals for {fundadata.symbol}</h2>
       <ul>
-        <li>{fundadata.symbol}</li>
-        <li>{fundadata.name}</li>
-        <li>{fundadata.exchange}</li>
-        <li>{fundadata.industry}</li>
-        <li>{fundadata.marketCap}</li>
-        <li>{fundadata.peRatio}</li>
-        <li>{fundadata.dividendYield}</li>
-        <li>{fundadata.beta}</li>
-        <li>{fundadata.eps}</li>
+        <li>Symbol: {fundadata.symbol}</li>
+        <li>Name: {fundadata.name}</li>
+        <li>Exchange: {fundadata.exchange}</li>
+        <li>Industry: {fundadata.industry}</li>
+        <li>MartketCap: {fundadata.marketCap}</li>
+        <li>PE: {fundadata.peRatio}</li>
+        <li>DividendYield: {fundadata.dividendYield}</li>
+        <li>Beta: {fundadata.beta}</li>
+        <li>EPS: {fundadata.eps}</li>
       </ul>
     </div>
 
