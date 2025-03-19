@@ -1,5 +1,9 @@
+import StockFundamental from "../../component/StockFundamental/StockFundamental";
+
+
 export default function SingleStockPage(){
   return(
-    <h1>this is SingleStockPage</h1>
+    <StockFundamental />
+
   )
 }

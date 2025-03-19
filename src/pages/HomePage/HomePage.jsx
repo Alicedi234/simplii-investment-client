@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import axios from "axios";
 import Candlestick from "../../component/Candlestick/Candlestick";
+import LineChart from "../../component/LineChart/LineChart";
 
 
 
@@ -8,10 +9,13 @@ export default function HomePage(){
 
   const [intradata, setIntraData] = useState([]);
   const [dailydata, setDailyData] = useState([]);
+  const [fundadata, setFundaData] = useState([]);
 
   const url_intra = "http://127.0.0.1:8000/api/intrastock?symbol=AAPL";
   const url_daily = "http://127.0.0.1:8000/api/dailystock?symbol=AAPL";
   
+  
+  //get intradata
   useEffect(() =>{
     const fetchData = async () =>{
       const response = await axios.get(url_intra);
@@ -21,6 +25,7 @@ export default function HomePage(){
     fetchData();
   },[]);
 
+  //get dailydata
   useEffect(() =>{
     const fetchData = async () =>{
       const response = await axios.get(url_daily);
@@ -30,6 +35,15 @@ export default function HomePage(){
     fetchData();
   },[]);
 
+  //get fundamental data
+  useEffect (()=>{
+    const fetchData = async () =>{
+      const response = await axios.get(url_funda);
+      console.log(response.data);
+      setFundaData(response.data)
+    }
+    fetchData();
+  },[]);
 
   
   return(
@@ -37,6 +51,7 @@ export default function HomePage(){
     <>
   <h1>this is homePage</h1>
     <Candlestick dailydata = {dailydata}/>
+    <LineChart dailydata = {dailydata} />
     </>
   )
 }
