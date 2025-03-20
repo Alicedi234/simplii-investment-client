@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
-export default async function MyPortfolio(){
+export default function MyPortfolio(){
 
   const navigate = useNavigate()
   const [portfolioName, setPortfolioName] = useState("");
@@ -26,7 +26,7 @@ export default async function MyPortfolio(){
         symbol: "",
         totalAmount: "",
         buyInPrice: "",
-        buyIndate: "",
+        buyInDate: "",
       }
     ])
   }
@@ -39,27 +39,27 @@ export default async function MyPortfolio(){
     e.preventDefault();
     const payload = {
       portfolioName,
-      createdAt: new Date().toISOSstring(),
+      createdAt: new Date().toISOString(),
       holdings: stocks,
     }
-  }
-  try {
-    const response = await fetch("http://localhost:3000/api/portfolio/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringfy(payload),
-    })
-
-    if (response.ok) {
-      const data = await response.json();
-      navigate(`/portfolio/${data.portfolioId}`);
-    } else{
-      alert("Failed to create portfolio");
+    try {
+      const response = await fetch("http://localhost:3000/api/portfolio/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+      
+      if (response.ok) {
+        const data = await response.json();
+        navigate(`/portfolio/${data.portfolioId}`);
+      } else{
+        alert("Failed to create portfolio");
+      }
+    } catch (error) {
+      console.error("Error submitting portfolio", error);
     }
-  } catch (error) {
-    console.error("Error submitting portfolio", error);
   }
   
   return (

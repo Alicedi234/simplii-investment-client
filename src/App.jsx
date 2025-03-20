@@ -20,8 +20,8 @@ function App() {
     <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/stock/:stockId" element = {<SingleStockPage />} />
-        <Route path="/portfolio/:portfolioId" element = {<MyPortfolioPage  />} />
-        <Route path="/portfolios" element = {<MyPortfolioAnalysisPage />} />
+        <Route path="createportfolio" element = {<MyPortfolioPage  />} />
+        <Route path="/portfolio/:portfolioId" element = {<MyPortfolioAnalysisPage  />} />
         <Route path ="/login" element = {<LoginPage />} />
         <Route path ="/signup" element = {<SignupPage />} />
     </Routes>
