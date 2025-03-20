@@ -44,7 +44,6 @@ export default function HomePage(){
     <>
   <h1>this is homePage</h1>
     <StockSearch />
-    <Candlestick dailydata = {dailydata}/>
     <LineChart dailydata = {dailydata} />
     </>
   )

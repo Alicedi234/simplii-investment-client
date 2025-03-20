@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 
 export default function StockSearch () {
-  const [searchSymbol, setSearchSymbol] =useState([]);
+  const [searchSymbol, setSearchSymbol] =useState("");
 
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ export default function StockSearch () {
       value = {searchSymbol}
       onChange = {(e) => setSearchSymbol(e.target.value)}
       />
-      <button type ="button">Search</button>
+      <button type ="submit">Search</button>
     </form>
       </div>
   )
