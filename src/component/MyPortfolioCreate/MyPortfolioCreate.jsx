@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import "./MyPortfolioCreate.scss";
 
 export default function MyPortfolio(){
   
@@ -68,30 +69,30 @@ export default function MyPortfolio(){
   }
   
   return (
-    <div >
-      <h1 className="text-2xl font-bold mb-4">Create Your Portfolio</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="myportfolio">
+      <h1 className="myportfolio__title">Create Your Portfolio</h1>
+      <form onSubmit={handleSubmit} className="myportfolio__form">
         <div>
-          <label className="block mb-1 font-medium">Portfolio Name</label>
+          <label className="myportfolio__label">Portfolio Name</label>
           <input
             type="text"
-            className="w-full p-2 border rounded"
+            className="myportfolio__input"
             value={portfolioName}
             onChange={(e) => setPortfolioName(e.target.value)}
             required
           />
         </div>
 
-        <h2 className="text-xl font-semibold mt-6">Stocks</h2>
+        <h2 className="myportfolio__title">Stocks</h2>
         {stocks.map((stock, index) => (
-          <div key={index} className="border p-4 rounded mb-2 space-y-2">
-            <div className="flex gap-2">
+          <div key={index} className="myporfolio__stock">
+            <di>
               <input
                 type="text"
                 placeholder="Symbol (e.g. AAPL)"
                 value={stock.symbol}
                 onChange={(e) => handleStockChange(index, "symbol", e.target.value)}
-                className="flex-1 p-2 border rounded"
+                className="myportfolio__input"
                 required
               />
               <input
@@ -99,7 +100,7 @@ export default function MyPortfolio(){
                 placeholder="Total Amount ($)"
                 value={stock.totalAmount}
                 onChange={(e) => handleStockChange(index, "totalAmount", e.target.value)}
-                className="w-40 p-2 border rounded"
+                className="myportfolio__input"
                 required
               />
               <input
@@ -107,22 +108,22 @@ export default function MyPortfolio(){
                 placeholder="Buy-in Price"
                 value={stock.buyInPrice}
                 onChange={(e) => handleStockChange(index, "buyInPrice", e.target.value)}
-                className="w-40 p-2 border rounded"
+                className="myportfolio__input"
                 required
               />
               <input
                 type="date"
                 value={stock.buyInDate}
                 onChange={(e) => handleStockChange(index, "buyInDate", e.target.value)}
-                className="w-40 p-2 border rounded"
+                className="myportfolio__input"
                 required
               />
-            </div>
+            </di>
             {stocks.length > 1 && (
               <button
                 type="button"
                 onClick={() => handleRemoveStock(index)}
-                className="text-red-500 text-sm"
+                className="myportfolio__button"
               >
                 Remove
               </button>
@@ -133,7 +134,7 @@ export default function MyPortfolio(){
         <button
           type="button"
           onClick={handleAddStock}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="myportfolio__button"
         >
           + Add Another Stock
         </button>
@@ -141,7 +142,7 @@ export default function MyPortfolio(){
         <div>
           <button
             type="submit"
-            className="mt-4 bg-green-600 text-white px-6 py-2 rounded"
+            className="myportfolio__button"
           >
             Create Portfolio
           </button>

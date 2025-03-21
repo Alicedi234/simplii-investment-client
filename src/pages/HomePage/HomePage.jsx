@@ -42,7 +42,6 @@ export default function HomePage(){
   return(
 
     <>
-  <h1>this is homePage</h1>
     <StockSearch />
     <LineChart dailydata = {dailydata} />
     </>

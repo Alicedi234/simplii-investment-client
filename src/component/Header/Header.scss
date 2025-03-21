@@ -1,0 +1,15 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.header {
+  &__nav{
+    @include flex(row, space-around, center, norap);
+    padding: 12px 0;
+    background-color: $primary-color3;
+    font-size: 24px;
+    gap: 2rem;
+  
+  }
+}

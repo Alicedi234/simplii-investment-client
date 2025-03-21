@@ -1,0 +1,25 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+
+.myportfolio{
+  margin: 4rem 0;
+  &__title{
+    font-size: 18px;
+  }
+  &__label{
+    font-size: 14px;
+  }
+  &__input{
+    width:40%;
+  }
+  &__stock{
+    @include flex(row, space-between, center, nowrap);
+}
+}
+
+.myporfolio__stock{
+  @include flex(row, space-between, center, nowrap);
+}

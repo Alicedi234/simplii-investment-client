@@ -1,0 +1,18 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.footer {
+  &__nav{
+    @include flex(column, flex-start, flex-start, nowrap);
+    padding: 24px 0;
+    background-color: $primary-color3;
+    font-size: 14px;
+    gap: 1rem;
+    &__item{
+      width: 70%;
+    }
+  
+  }
+}

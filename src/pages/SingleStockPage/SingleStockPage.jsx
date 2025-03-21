@@ -10,8 +10,8 @@ export default function SingleStockPage(){
   return(
     <>
     <h1>Stock Detail:{stockId}</h1>
-    <StockFundamental symbol={stockId} />
     <Candlestick symbol = {stockId} />
+    <StockFundamental symbol={stockId} />
     </>
 
   )

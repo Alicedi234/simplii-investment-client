@@ -13,12 +13,13 @@ export default function LineChart({dailydata}){
     (a,b) => new Date(a.time) - new Date(b.time)
   );
 
+  const last14 = sorted.slice(-14);
   const chartData = {
-    labels: sorted.map((d)=> new Date(d.time)),
+    labels: last14.map((d)=> new Date(d.time)),
     datasets:[
       {
         label: "Close Price",
-        data: sorted.map((d) => d.close),
+        data: last14.map((d) => d.close),
         borderColor: "#26a69a",
         backgroundColor: "rgba(38, 166, 154, 0.2)",
         pointRadius: 2,

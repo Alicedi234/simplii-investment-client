@@ -1,0 +1,21 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+
+.stockfundamental{
+  margin: 3rem 0;
+  &__title{
+    font-size: 18px;
+    text-align: left;
+  }
+  &__list{
+    text-align: left;
+  }
+  &__list--item{
+    &-value{
+      border: 4px solid bisque
+    }
+  }
+}

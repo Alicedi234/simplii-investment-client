@@ -1,0 +1,34 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+
+.stockSearch{
+  &__form{
+    width: 100%;
+    height: 40vh;
+    @include flex(column, center, center, nowrap);
+    gap: 2rem;
+    margin: 4rem 0;
+  }
+  &__label{
+      font-size: 24px;
+  }
+  &__input{
+      width:90%;
+      height: 6vh;
+      border: 2px solid $primary-color2;
+      border-radius: 10px;
+      
+    }
+  &__button{
+    width: 30%;
+    border: 2px solid $primary-color2;
+  }
+}
+
+.placeholder{
+  font-size: 16px;
+  color: black;
+}
