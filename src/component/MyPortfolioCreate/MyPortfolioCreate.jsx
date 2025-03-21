@@ -2,6 +2,10 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 export default function MyPortfolio(){
+  
+  const baseUrl = import.meta.env.VITE_PORTFOLIO_API_BASE_URL;
+
+
 
   const navigate = useNavigate()
   const [portfolioName, setPortfolioName] = useState("");
@@ -19,6 +23,7 @@ export default function MyPortfolio(){
     updated[index][field] = value;
     setStocks(updated);
   };
+
   const handleAddStock = () => {
     setStocks([
       ...stocks,
@@ -43,7 +48,7 @@ export default function MyPortfolio(){
       holdings: stocks,
     }
     try {
-      const response = await fetch("http://localhost:3000/api/myportfolio/create", {
+      const response = await fetch(`${baseUrl}/api/myportfolio/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

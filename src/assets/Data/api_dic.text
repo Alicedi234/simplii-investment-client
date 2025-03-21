@@ -10,5 +10,7 @@ Backend - express(creating router):
 "http://localhost:5174/stock/AAPL" -- single stock page
 
 
-create portfolio page:
+Create portfolio page:
 http://localhost:3000/api/myportfolio/create
+
+
