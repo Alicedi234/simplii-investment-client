@@ -43,7 +43,7 @@ export default function MyPortfolio(){
       holdings: stocks,
     }
     try {
-      const response = await fetch("http://localhost:3000/api/portfolio/create", {
+      const response = await fetch("http://localhost:3000/api/myportfolio/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
