@@ -55,7 +55,7 @@ export default function LineChart({ symbol }) {
       },
       title: {
         display: true,
-        text: "AAPL Stock Price - 7day",
+        text: `${symbol} Stock Price - 14day Line Chart`,
       },
     },
     scales: {

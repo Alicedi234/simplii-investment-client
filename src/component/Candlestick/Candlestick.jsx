@@ -67,7 +67,7 @@ export default function Candlestick({symbol}){
         },
         title:{
           display: true,
-          text: "Apple Inc. - 14day"
+          text: `${symbol} Stock Price - 14day Candlestick Chart`
         }
       },
       scales: {
@@ -76,10 +76,21 @@ export default function Candlestick({symbol}){
           time:{
             tooltipFormat: "MMM dd HH:mm",
             unit: "day",
+          },
+          title:{
+            display:true,
+            text: "date"
+          },
+          ticks:{
+            color:"#666",
           }
         },
         y: {
           beginAtZero: false,
+          title: {
+            display: true,
+            text: "stock price",
+          },
         }
       }
     }
