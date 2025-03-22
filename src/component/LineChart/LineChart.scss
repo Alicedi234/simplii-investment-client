@@ -4,6 +4,10 @@
 @use "../../styles/partials/typography" as *;
 
 .linechart-container{
-  margin: 4rem 0;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-top: 48px;
+  padding: 16px;
+  background-color: $color-white;
   
 }

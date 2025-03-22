@@ -1,12 +1,17 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
 .candlestick__container {
   
-  width: 1500px;
-  height: 500px;
-  margin: 3rem auto;
-  padding: 1rem;
-  background-color: #fafafa;
-  border-radius: 12px;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-top: 48px;
+  padding: 16px;
+  background-color: $color-white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  @include flex(column, center, center,nowrap);
 }
 
 .candlestick-__loading {

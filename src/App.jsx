@@ -10,7 +10,6 @@ import Footer from "./component/Footer/Footer";
 
 
 
-import './App.css'
 
 function App() {
 

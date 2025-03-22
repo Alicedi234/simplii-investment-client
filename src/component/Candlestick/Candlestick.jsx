@@ -5,6 +5,7 @@ import {Chart as ReactChart} from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
 import axios from "axios";
 import {useState, useEffect} from "react";
+import "./Candlestick.scss";
 
 //chats have to be registered before using them
 Chart.register(...registerables, CandlestickController, CandlestickElement, OhlcController, OhlcElement);
@@ -53,6 +54,22 @@ export default function Candlestick({symbol}){
     ]
   }
     const options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            color: "#333",
+          },
+        },
+        tooltip: {
+          mode: "index",
+          intersect: false,
+        },
+        title:{
+          display: true,
+          text: "Apple Inc. - 14day"
+        }
+      },
       scales: {
         x: {
           type: "time",

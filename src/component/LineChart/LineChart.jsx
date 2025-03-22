@@ -42,7 +42,7 @@ export default function LineChart({dailydata}){
       },
       title:{
         display: true,
-        text: "AAPL Stock Price - 7day"
+        text: "Apple Inc. - 14day"
       }
     },
     scales: {

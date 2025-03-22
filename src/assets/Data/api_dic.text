@@ -8,6 +8,9 @@ Backend - Python(fetching data):
 
 Backend - express(creating router):
 "http://localhost:5174/stock/AAPL" -- single stock page
+"http://localhost:8080/api/myportfolio/create
+"http://localhost:8080/api/myportfolio/portfolioId/analysis
+
 
 
 Create portfolio page:

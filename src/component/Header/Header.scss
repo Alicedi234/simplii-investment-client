@@ -4,12 +4,31 @@
 @use "../../styles/partials/typography" as *;
 
 .header {
-  &__nav{
-    @include flex(row, space-around, center, norap);
+  width: 100%;
+  height: 15vh;
+  @include flex(row, center, center, nowrap);
+  background-color: $color-white;
+  border-radius: 15px;
+  border:1px solid white;
+  &__nav {
+    @include flex(row, space-around, center, nowrap);
     padding: 12px 0;
-    background-color: $primary-color3;
-    font-size: 24px;
+    font-size: 18px;
     gap: 2rem;
-  
+    background-color: $color-white;
+
+    height: 15vh;
+    &--item {
+      border: 2px solid $color-darkgreen;
+      width: 30%;
+      padding: 8px 12px;
+      border-radius: 15px;
+      text-align: center;
+      background-color: $color-darkgreen;
+    }
+    &--text{
+      background-color: $color-darkgreen;
+      color: $color-white;
+    }
   }
 }

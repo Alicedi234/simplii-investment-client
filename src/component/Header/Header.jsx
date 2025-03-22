@@ -4,14 +4,24 @@ export default function Header(){
   return(
     <div className="header">
       <ul className="header__nav">
-        <li className="header__nav-item">Simplii Investment</li>
+        <div className="header__nav--item">
+        <li className="header__nav--text">Simplii Investment</li>
+        </div>
+        <div className="header__nav--item">
         <Link to="/">
-        <li className="header__nav-item">HomePage</li>
+        <li className="header__nav--text">Home</li>
         </Link>
+        </div>
+        <div className="header__nav--item">
         <Link to="/portfolio/create">
-        <li className="header__nav-item">MyPortfolio</li>
+        <li className="header__nav--text">MyPortfolio</li>
         </Link>
-        <li className="header__nav-item">MyFavoriate</li>
+        </div>
+        <div className="header__nav--item">
+        <Link to="/favorite">
+        <li className="header__nav--text">MyFavorite</li>
+        </Link>
+        </div>
       </ul>
     
     </div>
