@@ -1,22 +1,20 @@
-import {Chart, registerables} from "chart.js";
-import {Chart as ReactChart} from "react-chartjs-2";
+import { Chart, registerables } from "chart.js";
+import { Chart as ReactChart } from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
 import "./LineChart.scss";
 
 Chart.register(...registerables);
 
-
-export default function LineChart({dailydata}){
-
+export default function LineChart({ dailydata }) {
   //set the correct order
   const sorted = [...dailydata].sort(
-    (a,b) => new Date(a.time) - new Date(b.time)
+    (a, b) => new Date(a.time) - new Date(b.time)
   );
 
   const last14 = sorted.slice(-14);
   const chartData = {
-    labels: last14.map((d)=> new Date(d.time)),
-    datasets:[
+    labels: last14.map((d) => new Date(d.time)),
+    datasets: [
       {
         label: "Close Price",
         data: last14.map((d) => d.close),
@@ -24,9 +22,9 @@ export default function LineChart({dailydata}){
         backgroundColor: "rgba(38, 166, 154, 0.2)",
         pointRadius: 2,
         tension: 0.2,
-      }
-    ]
-  }
+      },
+    ],
+  };
 
   const options = {
     responsive: true,
@@ -40,15 +38,15 @@ export default function LineChart({dailydata}){
         mode: "index",
         intersect: false,
       },
-      title:{
+      title: {
         display: true,
-        text: "Apple Inc. - 14day"
-      }
+        text: "Apple Inc. - 14day",
+      },
     },
     scales: {
       x: {
         type: "time",
-        title:{
+        title: {
           display: true,
           text: "date",
         },
@@ -61,7 +59,6 @@ export default function LineChart({dailydata}){
         grid: {
           color: "#eee",
         },
-        
       },
       y: {
         ticks: {
@@ -70,7 +67,7 @@ export default function LineChart({dailydata}){
         grid: {
           color: "#eee",
         },
-        title:{
+        title: {
           display: true,
           text: "stock price",
         },
@@ -78,10 +75,14 @@ export default function LineChart({dailydata}){
     },
   };
 
-  return(
-    <div className= "linechart-container">
-      <ReactChart type = "line" data = {chartData} options = {options} />
+  return (
+    <div className="linechart-container">
+      <ReactChart type="line" data={chartData} options={options} />
+      <div className="linechart__button">
+        <button className="linechart__button--item">1D</button>
+        <button className="linechart__button--item">14D</button>
+        <button className="linechart__button--item">1M</button>
+      </div>
     </div>
-    
   );
 }

@@ -19,3 +19,24 @@
   color: #777;
   padding-top: 2rem;
 }
+
+.candlestick__button{
+  margin-top: 16px;
+  width: 90%;
+  height: 3vh;
+  @include flex(row, center, center, nowrap);
+  gap: 8px;
+  &--item{
+    border: 1px solid $color-lightgrey;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: $color-white;
+    color: $color-black;
+    font-size: 14px;
+    width: 25%;
+    height: 2vh;
+    @include flex(row, center, center, nowrap);
+    
+
+  }
+}

@@ -20,6 +20,8 @@ export default function SingleStockPage(){
       <img src={chartlineup} alt="back" className="singlestock__icon"/>
     </h1>
     <Candlestick symbol = {stockId} />
+    <LineChart symbol = {stockId} />
+    <StockFundamental symbol={stockId} />
     <div className="singlestock__button">
       <Link to = "/portfolio/create">
       <button className="singlestock__button--sell">Sell</button>
@@ -29,8 +31,8 @@ export default function SingleStockPage(){
       </button>
       </Link>
     </div>
-    <LineChart symbol = {stockId} />
-    <StockFundamental symbol={stockId} />
+    
+    
     </>
 
   )

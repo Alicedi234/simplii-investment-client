@@ -93,6 +93,11 @@ export default function LineChart({ symbol }) {
   return (
     <div className="linechart-container">
       <ReactChart type="line" data={chartData} options={options} />
+      <div className="linechart__button">
+        <button className="linechart__button--item">1D</button>
+        <button className="linechart__button--item">14D</button>
+        <button className="linechart__button--item">1M</button>
+      </div>
     </div>
   );
 }
