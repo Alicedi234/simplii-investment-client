@@ -83,7 +83,7 @@ export default function PieChart() {
 
   return (
     <div style={{ padding: "1rem" }} className="piechart">
-      <div style={{ maxWidth: "500px", margin: "2rem auto" }} className="piechart__chart">
+      <div style={{ maxWidth: "500px" }} className="piechart__chart">
         <h2 style={{ textAlign: "center" }} className="piechart__chart--title">
           Allocation by Current Value
           <img src={color1} alt="" className="piechart__icon"/></h2>

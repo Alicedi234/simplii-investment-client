@@ -9,6 +9,10 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import "./BarChart.scss";
+import color1 from "../../assets/icon/color1.png";
+
+
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -59,8 +63,10 @@ export default function BarChart() {
   };
 
   return (
-    <div style={{ maxWidth: "700px", margin: "2rem auto" }}>
-      <h2 style={{ textAlign: "center" }}>Investment vs Current Value</h2>
+    <div style={{ maxWidth: "700px" }} className="barchart-container">
+      <h2 style={{ textAlign: "center" }} className = "barchart__title">Investment vs Current Value 
+      <img src={color1} alt="" className="barchart-container__icon"/>
+      </h2>
       <Bar data={data} options={options} />
     </div>
   );

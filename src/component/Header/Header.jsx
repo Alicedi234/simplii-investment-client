@@ -14,12 +14,12 @@ export default function Header(){
         </div>
         <div className="header__nav--item">
         <Link to="/portfolio/create" className="header__nav--link">
-        <li className="header__nav--text">MyPortfolio</li>
+        <li className="header__nav--text">Create Portfolio</li>
         </Link>
         </div>
         <div className="header__nav--item">
-        <Link to="/favorite" className="header__nav--link">
-        <li className="header__nav--text">MyFavorite</li>
+        <Link to="/portfolio/list" className="header__nav--link">
+        <li className="header__nav--text">My Portfolios</li>
         </Link>
         </div>
       </ul>

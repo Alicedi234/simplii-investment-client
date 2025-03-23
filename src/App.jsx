@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import Header from "./component/Header/Header";
 import Footer from "./component/Footer/Footer";
+import MyPortfolioList from "./component/MyPortfolio/MyPortfolio"
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/stock/:stockId" element = {<SingleStockPage />} />
         <Route path="/portfolio/create" element = {<MyPortfolioPage  />} />
         <Route path="/portfolio/:portfolioId" element = {<MyPortfolioAnalysisPage  />} />
+        <Route path="/portfolio/list" element = {<MyPortfolioList />} />
         <Route path ="/login" element = {<LoginPage />} />
         <Route path ="/signup" element = {<SignupPage />} />
     </Routes>
