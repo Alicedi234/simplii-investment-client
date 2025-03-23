@@ -5,7 +5,7 @@
 
 .footer {
   &__nav{
-    @include flex(column, flex-start, flex-start, nowrap);
+    @include flex(row, flex-start, flex-start, nowrap);
     padding: 24px 0;
     background-color: $color-lightgrey;
     font-size: 14px;

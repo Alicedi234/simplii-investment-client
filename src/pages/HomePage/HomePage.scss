@@ -1,0 +1,10 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.homepage__main{
+  width: 100%;
+  max-width: 1200px;
+  @include flex(column, center, center, nowrap);
+}

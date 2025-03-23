@@ -10,7 +10,7 @@
   padding: 16px;
   background-color: $color-white;
   @include flex(column, center, center, nowrap);
-  
+  width: 100%;
 }
 
 .linechart__button{

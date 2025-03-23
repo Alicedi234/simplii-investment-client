@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./MyPortfolio.scss";
 
 export default function MyPortfolio() {
   const [portfolios, setPortfolios] = useState([]);
@@ -29,19 +30,18 @@ export default function MyPortfolio() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">My Portfolios</h1>
+    <div className="myportfoliolist">
+      <h1 className="myportfoliolist__title">My Portfolios</h1>
       {portfolios.map((portfolio) => (
         <div
           key={portfolio.id}
-          className="border border-gray-300 rounded p-4 mb-4 hover:shadow cursor-pointer"
+          className="myportfoliolist__container"
           onClick={() => navigate(`/portfolio/${portfolio.id}`)}
         >
-          <h2 className="text-xl font-semibold">{portfolio.name}</h2>
-          <p className="text-sm text-gray-500">Created at: {portfolio.created_at}</p>
-          <ul className="mt-2">
+          <h2 className="myportfoliolist__name">{portfolio.name}</h2>
+          <ul className="myportfoliolist__list">
             {portfolio.holdings.map((h, i) => (
-              <li key={i} className="text-sm text-gray-700">
+              <li key={i} className="myportfoliolist__list--item">
                 {h.symbol} — {h.shares} shares @ ${h.buy_price} (${h.total_amount})
               </li>
             ))}

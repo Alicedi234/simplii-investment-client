@@ -4,6 +4,8 @@ import Candlestick from "../../component/Candlestick/Candlestick";
 import LineChart from "../../component/LineChart/LineChart";
 import StockSearch from "../../component/StockSearch/StockSearch";
 
+import "./HomePage.scss";
+
 
 
 export default function HomePage(){
@@ -41,9 +43,9 @@ export default function HomePage(){
   
   return(
 
-    <>
+    <div className="homepage__main">
     <StockSearch />
     <LineChart dailydata = {dailydata} />
-    </>
+    </div>
   )
 }
