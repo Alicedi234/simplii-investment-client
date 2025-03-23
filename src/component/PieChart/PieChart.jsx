@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./pieChart.scss";
+import color1 from "../../assets/icon/color1.png";
+import color2 from "../../assets/icon/color2.png";
+
+
+
+
+
 
 // ====== Chart.js & Pie Chart imports ======
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
 
 export default function PieChart() {
   const { portfolioId } = useParams();
@@ -19,13 +21,14 @@ export default function PieChart() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
-  const baseUrl = import.meta.env.VITE_PORTFOLIO_API_BASE_URL
+  const baseUrl = import.meta.env.VITE_PORTFOLIO_API_BASE_URL;
 
   useEffect(() => {
     const fetchAnalysis = async () => {
       try {
-        const res = await fetch(`${baseUrl}/api/myportfolio/${portfolioId}/analysis`);
+        const res = await fetch(
+          `${baseUrl}/api/myportfolio/${portfolioId}/analysis`
+        );
         if (!res.ok) {
           throw new Error(`Failed to fetch analysis, status ${res.status}`);
         }
@@ -46,10 +49,9 @@ export default function PieChart() {
   if (error) return <p>Error: {error}</p>;
   if (!analysis) return <p>No data</p>;
 
-
   const { totalInvested, totalCurrentValue, portfolioROI, holdings } = analysis;
 
-  // PieChart Logic 
+  // PieChart Logic
 
   const labels = holdings.map((h) => h.symbol);
   const dataValues = holdings.map((h) => h.currentValue); // 以 currentValue 绘图
@@ -80,31 +82,59 @@ export default function PieChart() {
   };
 
   return (
-    <div style={{ padding: "1rem" }}>
-      {/* <h1 className="text-2xl font-bold">Portfolio Analysis</h1> */}
-      {/* <p>Portfolio ID: {analysis.portfolioId}</p>
-      <p>Total Invested: ${totalInvested.toFixed(2)}</p>
-      <p>Current Value: ${totalCurrentValue.toFixed(2)}</p>
-      <p>ROI: {(portfolioROI * 100).toFixed(2)}%</p> */}
-
-      {/* 饼图 */}
-      <div style={{ maxWidth: "500px", margin: "2rem auto" }}>
-        <h2 style={{ textAlign: "center" }}>Allocation by Current Value</h2>
+    <div style={{ padding: "1rem" }} className="piechart">
+      <div style={{ maxWidth: "500px", margin: "2rem auto" }} className="piechart__chart">
+        <h2 style={{ textAlign: "center" }} className="piechart__chart--title">
+          Allocation by Current Value
+          <img src={color1} alt="" className="piechart__icon"/></h2>
         <Pie data={pieData} options={pieOptions} />
       </div>
 
-      {/* 如果想列举每只股票的详细信息，也可以在这里循环 holdings */}
+      <div className="piechart__stockdata-container">
+      <h2>Holding List
+        <img src={color2} alt="" className="piechart__icon"/>
+      </h2>
       {holdings.map((stock) => (
-        <div key={stock.symbol} style={{ border: "1px solid #ccc", marginTop: "1rem", padding: "1rem" }}>
-          <p>Symbol: {stock.symbol}</p>
-          <p>Shares: {stock.shares}</p>
-          <p>Buy Price: {stock.buy_price}</p>
-          <p>Invested: {stock.invested}</p>
-          <p>Current Price: {stock.currentPrice}</p>
-          <p>Current Value: {stock.currentValue.toFixed(2)}</p>
-          <p>ROI: {(stock.roi * 100).toFixed(2)}%</p>
+        <div
+        key={stock.symbol}
+        style={{
+          border: "1px solid #ccc",
+          marginTop: "1rem",  
+          padding: "1rem",
+        }}
+        className="piechart__stockdata"
+        >
+          <p className ="piechart__stockdata--row">
+            <span className="piechart__stockdata--label">Symbol</span>
+            <span className="piechart__stockdata--value">{stock.symbol}</span>
+          </p>
+          <p className ="piechart__stockdata--row">
+            <span className="piechart__stockdata--label">Shares</span>
+            <span className="piechart__stockdata--value">{stock.shares}</span>
+          </p>
+          <p className ="piechart__stockdata--row">
+            <span className="piechart__stockdata--label">Buy Price</span>
+            <span className="piechart__stockdata--value">{stock.buy_price}</span>
+          </p>
+          <p className ="piechart__stockdata--row">
+            <span className="piechart__stockdata--label">Invested</span>
+            <span className="piechart__stockdata--value">{stock.invested}</span>
+          </p>
+          <p className ="piechart__stockdata--row">
+            <span className="piechart__stockdata--label">Current Price</span>
+            <span className="piechart__stockdata--value">{stock.currentPrice}</span>
+          </p>
+          <p className ="piechart__stockdata--row">
+            <span className="piechart__stockdata--label">Current Value</span>
+            <span className="piechart__stockdata--value">{stock.currentValue.toFixed(2)}</span>
+          </p>
+          <p className ="piechart__stockdata--row">
+            <span className="piechart__stockdata--label">ROI</span>
+            <span className="piechart__stockdata--value">{(stock.roi * 100).toFixed(2)}%</span>
+          </p>
         </div>
       ))}
+      </div>
     </div>
   );
 }

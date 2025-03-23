@@ -8,7 +8,6 @@
   background-color: $color-white;
   border: 1px solid $color-white;
   margin: 48px 16px;
-  height: 60vh;
   border-radius: 15px;
   &__form{
     background-color: $color-white;
@@ -51,8 +50,20 @@
   &__icon{
     width: 24px;
   }
-  
-  
+  &__button-container{
+    margin: 16px 24px;
+    @include flex(column, space-between, flex-start, nowrap);
+    background-color: $color-white;
+    gap: 16px;
+  }
+  &__button{
+    background-color: $color-darkgreen;
+    color: $color-white;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
 }
   
   

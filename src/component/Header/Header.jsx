@@ -8,17 +8,17 @@ export default function Header(){
         <li className="header__nav--text">Simplii Investment</li>
         </div>
         <div className="header__nav--item">
-        <Link to="/">
+        <Link to="/" className="header__nav--link">
         <li className="header__nav--text">Home</li>
         </Link>
         </div>
         <div className="header__nav--item">
-        <Link to="/portfolio/create">
+        <Link to="/portfolio/create" className="header__nav--link">
         <li className="header__nav--text">MyPortfolio</li>
         </Link>
         </div>
         <div className="header__nav--item">
-        <Link to="/favorite">
+        <Link to="/favorite" className="header__nav--link">
         <li className="header__nav--text">MyFavorite</li>
         </Link>
         </div>

@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./PortfolioAnalysis.scss";
+import webdesign from "../../assets/icon/web-design.png";
+
+
+
+
 
 export default function PortfolioAnalysisPage() {
   const { portfolioId } = useParams();
@@ -34,27 +40,30 @@ export default function PortfolioAnalysisPage() {
 
   const { portfolioName, totalInvested, totalCurrentValue, portfolioROI, holdings } = analysis;
   return (
+    <>
+      <h1 className="analysis__title">Portfolio Analysis
+        <img src={webdesign} alt="webdesign"  className="analysis__icon"/>
+      </h1>
     <div className="analysis">
-      <h1 className="analysis__title">Portfolio Analysis</h1>
-      {/* 如果需要货币符号可以加在后面 */}
-      <p>Portfolio Name: {portfolioName}</p>
-      <p>Total Invested: ${totalInvested.toFixed(2)}</p>
-      <p>Current Value: ${totalCurrentValue.toFixed(2)}</p>
-      <p>ROI: {(portfolioROI * 100).toFixed(2)}%</p>
 
-      <h2>Holdings:</h2>
-      {holdings.map((stock) => (
-        <div key={stock.symbol} style={{ border: "1px solid #ccc", margin: "8px 0", padding: "8px" }}>
-          <p>Symbol: {stock.symbol}</p>
-          <p>Shares: {stock.shares.toFixed(4)}</p>
-          <p>Buy Price: ${stock.buy_price}</p>
-          <p>Invested: ${stock.invested.toFixed(2)}</p>
-          <p>Current Price: ${stock.currentPrice.toFixed(2)}</p>
-          <p>Current Value: ${stock.currentValue.toFixed(2)}</p>
-          <p>ROI: {(stock.roi * 100).toFixed(2)}%</p>
-        </div>
-      ))}
+      <p className="analysis__row">
+      <span className="analysis__label">Portfolio Name</span>
+      <span className="analysis__value">{portfolioName}</span>
+      </p>
+      <p className="analysis__row">
+      <span className="analysis__label">Total Invested</span>
+      <span className="analysis__value">${totalInvested.toFixed(2)}</span>
+      </p>
+      <p className="analysis__row">
+      <span className="analysis__label">Current Value</span>
+      <span className="analysis__value">${totalCurrentValue.toFixed(2)}</span>
+      </p>
+      <p className="analysis__row">
+      <span className="analysis__label">ROI</span>
+      <span className="analysis__value">{(portfolioROI * 100).toFixed(2)}%</span>
+      </p>
     </div>
+    </>
   );
 
 }

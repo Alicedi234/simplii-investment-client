@@ -3,39 +3,39 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-
-.analysis{
-  margin-left: 56px;
-  border: 1px solid $color-bordergrey;
-  border-radius: 15px;
-  background-color: $color-white;
-  padding: 20px;
-  &__title{
-    font-size: 24px;
-    margin-bottom: 20px;
-    margin-left: 56px;
-
+.piechart{
+  &__chart{
+    &--title{
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
-  &__row{
-    @include flex(row, space-between, center, nowrap);
+  &__stockdata{
+    border: 1px solid $color-white;
     background-color: $color-white;
-  }
-  &__label{
+    border-radius: 15px;
+    &--row{
+      @include flex(row, space-between, center, nowrap);
+      background-color: $color-white;
+    }
+  &--label{
     background-color: $color-white;
     color: $color-grey;
     margin: 4px 0;
   }
-  &__value{
+  &--value{
     border:1px solid $color-darkgreen;
     border-radius: 15px;
-    background-color: $color-darkgreen;
+    background-color: $color-forestgreen;
     opacity: 0.8;
     padding: 0px 8px;
     color: $color-white;
   }
+  }
 }
 
-.analysis__icon{
+.piechart__icon{
   width: 32px;
   position: absolute;
 }

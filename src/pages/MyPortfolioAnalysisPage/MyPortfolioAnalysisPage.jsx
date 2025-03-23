@@ -4,8 +4,8 @@ import PieChart from "../../component/PieChart/PieChart";
 export default function MyPortfolioAnalysisPage(){
   return(
     <>
-    <PortfolioAnalysis />
     <PieChart />
+    <PortfolioAnalysis />
     </>
   )
 }
