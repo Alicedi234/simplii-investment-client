@@ -5,6 +5,7 @@ import { Chart, registerables } from "chart.js";
 import { Chart as ReactChart } from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
 import "./LineChart.scss";
+import color3 from "../../assets/icon/color3.png";
 
 Chart.register(...registerables);
 
@@ -64,7 +65,6 @@ export default function PortfolioLineChart() {
       },
       title: {
         display: true,
-        text: "Portfolio Value Over Time",
       },
     },
     scales: {
@@ -93,6 +93,10 @@ export default function PortfolioLineChart() {
 
   return (
     <div className="linechart-container">
+      <h2 className="linechart-container__title">Portfolio Value Over Time
+        <img src={color3} alt="" className="linechart-container__icon"/>
+
+      </h2>
       <ReactChart type="line" data={chartData} options={options} />
     </div>
   );

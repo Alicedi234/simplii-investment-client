@@ -5,7 +5,7 @@
 
 
 .stockSearch{
-  background-image: url("../../assets/image/white-money.jpg");
+  background-image: url("../../assets/image/new-investment-bg.png");
   background-size: cover;
   background-position: center;
   border-radius: 15px;
@@ -22,24 +22,26 @@
    
   }
   &__label{
-      font-size: 24px;
+      font-size: 40px;
       background: none;
-      color: $color-darkgreen;
-      font-weight: 600;
+      color: $color-white;
+      font-weight: 900;
   }
   &__input{
       width:90%;
       height: 6vh;
       border: 2px solid $color-darkgreen;
       border-radius: 10px;
+      padding: 0 16px;
       
     }
   &__button{
     width: 20%;
     border: 2px solid $color-darkgreen;
-    background-color: $color-darkgreen;
-    color: $color-white;
+    background-color: $color-white;
+    color: $color-darkgreen;
     border-radius: 15px;
+    height: 4vh;
   }
 }
 

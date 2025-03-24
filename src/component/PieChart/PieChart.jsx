@@ -4,12 +4,6 @@ import "./pieChart.scss";
 import color1 from "../../assets/icon/color1.png";
 import color2 from "../../assets/icon/color2.png";
 
-
-
-
-
-
-// ====== Chart.js & Pie Chart imports ======
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
@@ -54,7 +48,7 @@ export default function PieChart() {
   // PieChart Logic
 
   const labels = holdings.map((h) => h.symbol);
-  const dataValues = holdings.map((h) => h.currentValue); // 以 currentValue 绘图
+  const dataValues = holdings.map((h) => h.currentValue); 
   const pieData = {
     labels,
     datasets: [
@@ -82,8 +76,8 @@ export default function PieChart() {
   };
 
   return (
-    <div style={{ padding: "1rem" }} className="piechart">
-      <div style={{ maxWidth: "500px" }} className="piechart__chart">
+    <div className="piechart">
+      <div className="piechart__chart">
         <h2 style={{ textAlign: "center" }} className="piechart__chart--title">
           Allocation by Current Value
           <img src={color1} alt="" className="piechart__icon"/></h2>
@@ -91,7 +85,7 @@ export default function PieChart() {
       </div>
 
       <div className="piechart__stockdata-container">
-      <h2>Holding List
+      <h2 className="piechart__stockdata__title">Holding List
         <img src={color2} alt="" className="piechart__icon"/>
       </h2>
       {holdings.map((stock) => (

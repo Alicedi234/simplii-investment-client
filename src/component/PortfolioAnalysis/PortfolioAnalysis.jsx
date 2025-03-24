@@ -40,7 +40,7 @@ export default function PortfolioAnalysisPage() {
 
   const { portfolioName, totalInvested, totalCurrentValue, portfolioROI, holdings } = analysis;
   return (
-    <>
+    <div className="analysis__container">
       <h1 className="analysis__title">Portfolio Analysis
         <img src={webdesign} alt="webdesign"  className="analysis__icon"/>
       </h1>
@@ -63,7 +63,7 @@ export default function PortfolioAnalysisPage() {
       <span className="analysis__value">{(portfolioROI * 100).toFixed(2)}%</span>
       </p>
     </div>
-    </>
+    </div>
   );
 
 }
