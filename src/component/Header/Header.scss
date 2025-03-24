@@ -5,30 +5,42 @@
 
 .header{
   &__nav{
+    width: 100%;
     @include flex(row, space-evenly, center, nowrap);
     border: 1px solid $color-white;
-    background-color: $color-white;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
     padding: 8px 24px;
     height: 7vh;
+
     &--item{
-      border: 2px solid $color-darkgreen;
+      border: 2px solid $color-forestgreen;
       border-radius: 25px;
       height: 7vh;
       @include flex(row, center, center, nowrap);
-      background-color: $color-darkgreen;
+      background-color: $color-white;
+      width: 40%;
 
 
     }
     &--text{
-      font-size: 18px;
-      background-color: $color-darkgreen;
-      color: $color-white;
+      font-size: 16px;
+      background-color: $color-white;
+      color: $color-darkgreen;
 
     }
     &--link{
-      background-color: $color-darkgreen;
+      background-color: $color-white;
+    }
+    &--logo{
+      background-color: $color-white;
     }
   }
+
+}
+
+#header__logo{
+  width: 50px;
+  height: 43px;
 
 }
