@@ -1,9 +1,8 @@
 import {useState, useEffect} from "react";
 import axios from "axios";
-import Candlestick from "../../component/Candlestick/Candlestick";
 import LineChart from "../../component/LineChart/LineChart";
 import StockSearch from "../../component/StockSearch/StockSearch";
-
+import {Link} from "react-router-dom";
 import "./HomePage.scss";
 
 
@@ -42,8 +41,16 @@ export default function HomePage(){
 
   
   return(
-
     <div className="homepage__main">
+    <div className="homepage__main--button">
+      <Link to="/login">
+      <button className="homepage__main--button-item">LogIn</button>
+      </Link>
+      <Link to="/signup">
+      <button className="homepage__main--button-item">SignUp</button>
+      </Link>
+    </div>
+   
     <StockSearch />
     <LineChart dailydata = {dailydata} />
     </div>
