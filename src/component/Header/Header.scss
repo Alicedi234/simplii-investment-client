@@ -21,18 +21,28 @@
       @include flex(row, center, center, nowrap);
       background-color: $color-white;
       width: 40%;
-
-
+      &:active{
+        background-color: $color-darkgreen;
+        color: $color-white;
+      }
     }
     &--text{
       font-size: 20px;
       background-color: $color-white;
       color: $color-darkgreen;
       font-weight: 900;
+      &:active{
+        color: $color-white;
+        background-color: $color-darkgreen;
+      }
 
     }
     &--link{
       background-color: $color-white;
+      &:active{
+        background-color: $color-darkgreen;
+        color: $color-white;
+      }
     }
     &--logo{
       background-color: $color-white;

@@ -20,7 +20,7 @@ export default function StockSearch () {
       <label className="stockSearch__label lable2">Power Up Your Investment</label>
     <label className="stockSearch__label">Try Our Real-Time Stock Searching</label>
       <input className="stockSearch__input" type="text" 
-      placeholder ="Enter your stock symbol (e.g. AAPL)"
+      placeholder ="Enter your stock symbol (e.g. AAPL) Note: Must be valid stock symbol :)"
       value = {searchSymbol}
       onChange = {(e) => setSearchSymbol(e.target.value)}
       />
