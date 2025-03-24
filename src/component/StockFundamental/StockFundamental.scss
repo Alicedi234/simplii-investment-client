@@ -88,6 +88,7 @@ margin: 8px 0;
   border-radius: 15px;
   border: 1px solid $color-white;
   padding: 16px;
+  font-size: 16px;
 }
 
 .fundamental-button{
@@ -96,12 +97,15 @@ margin: 8px 0;
   border-radius: 15px;
   padding: 8px;
   margin: 8px;
+  font-size: 16px;
 }
 
 .technical-button{
+  font-size: 16px;
   &:hover{
     background-color: $color-white;
     border: 1px solid $color-lightgrey;
     border-radius: 15px;
+    font-size: 16px;
   }
 }

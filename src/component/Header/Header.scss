@@ -4,6 +4,7 @@
 @use "../../styles/partials/typography" as *;
 
 .header{
+  width: 100%;
   &__nav{
     width: 100%;
     @include flex(row, space-evenly, center, nowrap);
@@ -11,12 +12,12 @@
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
     padding: 8px 24px;
-    height: 7vh;
+    height: 5vh;
 
     &--item{
       border: 2px solid $color-forestgreen;
       border-radius: 25px;
-      height: 7vh;
+      height: 5vh;
       @include flex(row, center, center, nowrap);
       background-color: $color-white;
       width: 40%;
@@ -41,7 +42,7 @@
 }
 
 #header__logo{
-  width: 50px;
-  height: 43px;
+  width: 55px;
+  height: 46px;
 
 }

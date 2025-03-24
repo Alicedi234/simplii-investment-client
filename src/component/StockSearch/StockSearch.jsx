@@ -17,7 +17,8 @@ export default function StockSearch () {
   return (
     <div className="stockSearch">
     <form onSubmit = {handleSubmit} className="stockSearch__form">
-      <label className="stockSearch__label">Power Up Your Investment</label>
+      <label className="stockSearch__label lable2">Power Up Your Investment</label>
+    <label className="stockSearch__label">Try Our Real-Time Stock Searching</label>
       <input className="stockSearch__input" type="text" 
       placeholder ="Enter your stock symbol (e.g. AAPL)"
       value = {searchSymbol}

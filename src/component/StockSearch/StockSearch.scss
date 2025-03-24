@@ -42,10 +42,19 @@
     color: $color-darkgreen;
     border-radius: 15px;
     height: 4vh;
+    font-weight: 900;
   }
 }
 
 .placeholder{
   font-size: 16px;
   color: black;
+}
+
+.lable2{
+  font-size: 24px;
+  color: $color-white;
+  font-weight: 900;
+  margin-bottom: -35px;
+
 }
