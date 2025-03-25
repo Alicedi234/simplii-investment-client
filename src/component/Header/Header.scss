@@ -1,0 +1,55 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.header {
+  width: 100%;
+  &__nav {
+    width: 100%;
+    @include flex(row, space-evenly, center, nowrap);
+    border: 1px solid $color-white;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 8px 24px;
+    height: 5vh;
+
+    &--item {
+      border: 2px solid $color-forestgreen;
+      border-radius: 25px;
+      height: 5vh;
+      @include flex(row, center, center, nowrap);
+      background-color: $color-white;
+      width: 40%;
+      &:active {
+        background-color: $color-darkgreen;
+        color: $color-white;
+      }
+    }
+    &--text {
+      font-size: 20px;
+      background-color: $color-white;
+      color: $color-darkgreen;
+      font-weight: 900;
+      &:active {
+        color: $color-white;
+        background-color: $color-darkgreen;
+      }
+    }
+    &--link {
+      background-color: $color-white;
+      &:active {
+        background-color: $color-darkgreen;
+        color: $color-white;
+      }
+    }
+    &--logo {
+      background-color: $color-white;
+    }
+  }
+}
+
+#header__logo {
+  width: 55px;
+  height: 46px;
+}

@@ -1,0 +1,71 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.myportfolio {
+  width: 100%;
+  background-color: $color-white;
+  border: 1px solid $color-white;
+  margin: 48px 16px;
+  border-radius: 15px;
+  &__form {
+    background-color: $color-white;
+    margin: 24px 0;
+    @include flex(column, space-evenly, flex-start, nowrap);
+  }
+  &__portfolio {
+    @include flex(column, space-evenly, flex-start, nowrap);
+    gap: 16px;
+    padding: 16px;
+    background-color: $color-white;
+    width: 60%;
+  }
+  &__stock {
+    @include flex(column, space-evenly, flex-start, nowrap);
+    gap: 16px;
+    width: 90%;
+    padding: 16px;
+    background-color: $color-white;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 8px 46px;
+    background-color: $color-white;
+  }
+  &__label {
+    font-size: 20px;
+    background-color: $color-white;
+  }
+  &__input {
+    width: 90%;
+    height: 3vh;
+    border: 1px solid $color-grey;
+    border-radius: 15px;
+    padding: 8px;
+  }
+  &__icon {
+    width: 24px;
+  }
+  &__button-container {
+    margin: 16px 24px;
+    @include flex(column, space-between, flex-start, nowrap);
+    background-color: $color-white;
+    gap: 16px;
+  }
+  &__button {
+    background-color: $color-darkgreen;
+    color: $color-white;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+}
+
+.maintitle {
+  text-align: left;
+  font-size: 36px;
+  background-color: $color-white;
+}

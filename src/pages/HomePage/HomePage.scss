@@ -1,0 +1,26 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.homepage__main {
+  width: 100%;
+  max-width: 1200px;
+  @include flex(column, center, center, nowrap);
+}
+
+.homepage__main--button {
+  margin-left: 80%;
+  @include flex(row, center, center, nowrap);
+  margin-bottom: 20px;
+}
+
+.homepage__main--button-item {
+  background-color: $color-darkgreen;
+  color: $color-white;
+  margin-right: -20px;
+  border-radius: 15px;
+  padding: 4px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
