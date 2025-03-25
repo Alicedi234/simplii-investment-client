@@ -3,37 +3,36 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.singlestock{
-  &__title{
+.singlestock {
+  &__title {
     margin-top: 32px;
   }
-  &__icon{
+  &__icon {
     width: 24px;
   }
-  &__icon2{
+  &__icon2 {
     width: 16px;
     height: 16px;
   }
-  &__button{
+  &__button {
     margin-top: 40px;
     @include flex(row, center, center, nowrap);
-  &--sell{
-    width: 150px;
-    height: 3vh;
-    background-color: $color-white;
-    border-radius: 10px;
-    border: 1px solid $color-grey;
-    margin-right: 10px;
-  }
-  &--buy{
-    width: 150px;
-    height: 3vh;
-    background-color: $color-darkgreen;
-    border-radius: 10px;
-    border: 1px solid $color-grey;
-    margin-right: 10px;
-    color: $color-white;
+    &--sell {
+      width: 150px;
+      height: 3vh;
+      background-color: $color-white;
+      border-radius: 10px;
+      border: 1px solid $color-grey;
+      margin-right: 10px;
+    }
+    &--buy {
+      width: 150px;
+      height: 3vh;
+      background-color: $color-darkgreen;
+      border-radius: 10px;
+      border: 1px solid $color-grey;
+      margin-right: 10px;
+      color: $color-white;
+    }
   }
 }
-}
-

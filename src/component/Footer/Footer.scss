@@ -4,15 +4,14 @@
 @use "../../styles/partials/typography" as *;
 
 .footer {
-  &__nav{
+  &__nav {
     @include flex(row, flex-start, flex-start, nowrap);
     padding: 24px 0;
     background-color: $color-lightgrey;
     font-size: 14px;
     gap: 1rem;
-    &__item{
+    &__item {
       width: 70%;
     }
-  
   }
 }

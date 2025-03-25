@@ -12,8 +12,6 @@ import { Bar } from "react-chartjs-2";
 import "./BarChart.scss";
 import color1 from "../../assets/icon/color1.png";
 
-
-
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 export default function BarChart() {
@@ -24,7 +22,9 @@ export default function BarChart() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${baseUrl}/api/myportfolio/${portfolioId}/analysis`);
+      const res = await fetch(
+        `${baseUrl}/api/myportfolio/${portfolioId}/analysis`
+      );
       const data = await res.json();
       setAnalysis(data);
     };
@@ -64,8 +64,9 @@ export default function BarChart() {
 
   return (
     <div style={{ maxWidth: "700px" }} className="barchart-container">
-      <h2 style={{ textAlign: "center" }} className = "barchart__title">Investment vs Current Value 
-      <img src={color1} alt="" className="barchart-container__icon"/>
+      <h2 style={{ textAlign: "center" }} className="barchart__title">
+        Investment vs Current Value
+        <img src={color1} alt="" className="barchart-container__icon" />
       </h2>
       <Bar data={data} options={options} />
     </div>

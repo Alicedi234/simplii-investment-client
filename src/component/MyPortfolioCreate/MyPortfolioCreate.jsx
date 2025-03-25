@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyPortfolioCreate.scss";
-import coin from "../../assets/icon/coins.png"
-import lightbulb from "../../assets/icon/lightbulb-dollar.png"
-import badgecheck from "../../assets/icon/badge-check.png"
-import rocket from "../../assets/icon/rocket-lunch.png"
+import coin from "../../assets/icon/coins.png";
+import badgecheck from "../../assets/icon/badge-check.png";
+import rocket from "../../assets/icon/rocket-lunch.png";
 
 export default function MyPortfolio() {
   const baseUrl = import.meta.env.VITE_PORTFOLIO_API_BASE_URL;
@@ -71,14 +70,16 @@ export default function MyPortfolio() {
 
   return (
     <div className="myportfolio">
-      <h1 className="myportfolio__title maintitle">Create Your Portfolio
-        <img src={coin}alt="" className="myportfolio__icon"/>
+      <h1 className="myportfolio__title maintitle">
+        Create Your Portfolio
+        <img src={coin} alt="" className="myportfolio__icon" />
       </h1>
       <form onSubmit={handleSubmit} className="myportfolio__form">
         <div className="myportfolio__portfolio">
           <label className="myportfolio__label">
-            <img src={rocket} alt="" className="myportfolio__icon"/>
-            Portfolio Name</label>
+            <img src={rocket} alt="" className="myportfolio__icon" />
+            Portfolio Name
+          </label>
           <input
             type="text"
             className="myportfolio__input"
@@ -89,12 +90,12 @@ export default function MyPortfolio() {
           />
         </div>
 
-     
         {stocks.map((stock, index) => (
           <div key={index} className="myportfolio__stock">
             <label className="myportfolio__label">
-              <img src={badgecheck} alt="" className="myportfolio__icon"/>
-              Stock Symbol</label>
+              <img src={badgecheck} alt="" className="myportfolio__icon" />
+              Stock Symbol
+            </label>
             <input
               type="text"
               placeholder="Symbol (e.g. AAPL)"
@@ -106,7 +107,9 @@ export default function MyPortfolio() {
               required
             />
             <label className="myportfolio__label">
-            <img src={badgecheck} alt="" className="myportfolio__icon"/>Total Amount ($)</label>
+              <img src={badgecheck} alt="" className="myportfolio__icon" />
+              Total Amount ($)
+            </label>
             <input
               type="number"
               placeholder="Total Amount ($)"
@@ -118,7 +121,9 @@ export default function MyPortfolio() {
               required
             />
             <label className="myportfolio__label">
-            <img src={badgecheck} alt="" className="myportfolio__icon"/>Buy-In Price</label>
+              <img src={badgecheck} alt="" className="myportfolio__icon" />
+              Buy-In Price
+            </label>
             <input
               type="number"
               placeholder="Buy-in Price"
@@ -130,7 +135,9 @@ export default function MyPortfolio() {
               required
             />
             <label className="myportfolio__label">
-            <img src={badgecheck} alt="" className="myportfolio__icon"/>Buy-In Date</label>
+              <img src={badgecheck} alt="" className="myportfolio__icon" />
+              Buy-In Date
+            </label>
             <input
               type="date"
               value={stock.buyInDate}

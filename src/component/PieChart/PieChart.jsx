@@ -48,7 +48,7 @@ export default function PieChart() {
   // PieChart Logic
 
   const labels = holdings.map((h) => h.symbol);
-  const dataValues = holdings.map((h) => h.currentValue); 
+  const dataValues = holdings.map((h) => h.currentValue);
   const pieData = {
     labels,
     datasets: [
@@ -80,54 +80,66 @@ export default function PieChart() {
       <div className="piechart__chart">
         <h2 style={{ textAlign: "center" }} className="piechart__chart--title">
           Allocation by Current Value
-          <img src={color1} alt="" className="piechart__icon"/></h2>
+          <img src={color1} alt="" className="piechart__icon" />
+        </h2>
         <Pie data={pieData} options={pieOptions} />
       </div>
 
       <div className="piechart__stockdata-container">
-      <h2 className="piechart__stockdata__title">Holding List
-        <img src={color2} alt="" className="piechart__icon"/>
-      </h2>
-      {holdings.map((stock) => (
-        <div
-        key={stock.symbol}
-        style={{
-          border: "1px solid #ccc",
-          marginTop: "1rem",  
-          padding: "1rem",
-        }}
-        className="piechart__stockdata"
-        >
-          <p className ="piechart__stockdata--row">
-            <span className="piechart__stockdata--label">Symbol</span>
-            <span className="piechart__stockdata--value">{stock.symbol}</span>
-          </p>
-          <p className ="piechart__stockdata--row">
-            <span className="piechart__stockdata--label">Shares</span>
-            <span className="piechart__stockdata--value">{stock.shares}</span>
-          </p>
-          <p className ="piechart__stockdata--row">
-            <span className="piechart__stockdata--label">Buy Price</span>
-            <span className="piechart__stockdata--value">{stock.buy_price}</span>
-          </p>
-          <p className ="piechart__stockdata--row">
-            <span className="piechart__stockdata--label">Invested</span>
-            <span className="piechart__stockdata--value">{stock.invested}</span>
-          </p>
-          <p className ="piechart__stockdata--row">
-            <span className="piechart__stockdata--label">Current Price</span>
-            <span className="piechart__stockdata--value">{stock.currentPrice}</span>
-          </p>
-          <p className ="piechart__stockdata--row">
-            <span className="piechart__stockdata--label">Current Value</span>
-            <span className="piechart__stockdata--value">{stock.currentValue.toFixed(2)}</span>
-          </p>
-          <p className ="piechart__stockdata--row">
-            <span className="piechart__stockdata--label">ROI</span>
-            <span className="piechart__stockdata--value">{(stock.roi * 100).toFixed(2)}%</span>
-          </p>
-        </div>
-      ))}
+        <h2 className="piechart__stockdata__title">
+          Holding List
+          <img src={color2} alt="" className="piechart__icon" />
+        </h2>
+        {holdings.map((stock) => (
+          <div
+            key={stock.symbol}
+            style={{
+              border: "1px solid #ccc",
+              marginTop: "1rem",
+              padding: "1rem",
+            }}
+            className="piechart__stockdata"
+          >
+            <p className="piechart__stockdata--row">
+              <span className="piechart__stockdata--label">Symbol</span>
+              <span className="piechart__stockdata--value">{stock.symbol}</span>
+            </p>
+            <p className="piechart__stockdata--row">
+              <span className="piechart__stockdata--label">Shares</span>
+              <span className="piechart__stockdata--value">{stock.shares}</span>
+            </p>
+            <p className="piechart__stockdata--row">
+              <span className="piechart__stockdata--label">Buy Price</span>
+              <span className="piechart__stockdata--value">
+                {stock.buy_price}
+              </span>
+            </p>
+            <p className="piechart__stockdata--row">
+              <span className="piechart__stockdata--label">Invested</span>
+              <span className="piechart__stockdata--value">
+                {stock.invested}
+              </span>
+            </p>
+            <p className="piechart__stockdata--row">
+              <span className="piechart__stockdata--label">Current Price</span>
+              <span className="piechart__stockdata--value">
+                {stock.currentPrice}
+              </span>
+            </p>
+            <p className="piechart__stockdata--row">
+              <span className="piechart__stockdata--label">Current Value</span>
+              <span className="piechart__stockdata--value">
+                {stock.currentValue.toFixed(2)}
+              </span>
+            </p>
+            <p className="piechart__stockdata--row">
+              <span className="piechart__stockdata--label">ROI</span>
+              <span className="piechart__stockdata--value">
+                {(stock.roi * 100).toFixed(2)}%
+              </span>
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

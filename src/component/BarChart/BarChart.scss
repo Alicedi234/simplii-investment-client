@@ -3,7 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.barchart-container{
+.barchart-container {
   width: 100%;
   max-width: 1200px;
   border: 1px solid white;
@@ -12,14 +12,13 @@
   padding: 16px;
   background-color: $color-white;
   @include flex(column, center, center, nowrap);
-  &__icon{
+  &__icon {
     width: 24px;
     position: absolute;
   }
-  
 }
 
-.barchart__title{
+.barchart__title {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;

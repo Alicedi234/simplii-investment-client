@@ -3,8 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-
-.stockSearch{
+.stockSearch {
   background-image: url("../../assets/image/new-investment-bg.png");
   background-size: cover;
   background-position: center;
@@ -12,30 +11,28 @@
   border: 1px solid white;
   margin-top: 48px auto;
   width: 80%;
-  &__form{
+  &__form {
     width: 100%;
     height: 40vh;
     @include flex(column, center, center, nowrap);
     gap: 2rem;
     margin: 4rem 0;
     background: none;
-   
   }
-  &__label{
-      font-size: 40px;
-      background: none;
-      color: $color-white;
-      font-weight: 900;
+  &__label {
+    font-size: 40px;
+    background: none;
+    color: $color-white;
+    font-weight: 900;
   }
-  &__input{
-      width:90%;
-      height: 6vh;
-      border: 2px solid $color-darkgreen;
-      border-radius: 10px;
-      padding: 0 16px;
-      
-    }
-  &__button{
+  &__input {
+    width: 90%;
+    height: 6vh;
+    border: 2px solid $color-darkgreen;
+    border-radius: 10px;
+    padding: 0 16px;
+  }
+  &__button {
     width: 20%;
     border: 2px solid $color-darkgreen;
     background-color: $color-white;
@@ -46,15 +43,14 @@
   }
 }
 
-.placeholder{
+.placeholder {
   font-size: 16px;
   color: black;
 }
 
-.lable2{
+.lable2 {
   font-size: 24px;
   color: $color-white;
   font-weight: 900;
   margin-bottom: -35px;
-
 }

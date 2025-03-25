@@ -1,15 +1,15 @@
 Backend - Python(fetching data): 
- "http://127.0.0.1:8000/api/intrastock?symbol=AAPL"
- "http://127.0.0.1:8000/api/dailystock?symbol=AAPL"
- "http://127.0.0.1:8000/api/fundastock?symbol=AAPL"
+http://127.0.0.1:8000/api/intrastock?symbol=AAPL
+http://127.0.0.1:8000/api/dailystock?symbol=AAPL
+http://127.0.0.1:8000/api/fundastock?symbol=AAPL
  
 
 
 
 Backend - express(creating router):
-"http://localhost:5174/stock/AAPL" -- single stock page
-"http://localhost:8080/api/myportfolio/create
-"http://localhost:8080/api/myportfolio/portfolioId/analysis
+http://localhost:5174/stock/AAPL" -- single stock page
+http://localhost:8080/api/myportfolio/create
+http://localhost:8080/api/myportfolio/portfolioId/analysis
 
 
 

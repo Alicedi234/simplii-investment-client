@@ -3,86 +3,81 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-
-.stockfundamental{
+.stockfundamental {
   width: 100%;
   background-color: $color-white;
   margin: 8px 0;
-  &__title{
+  &__title {
     font-size: 18px;
     text-align: left;
     background-color: $color-white;
   }
-  &__list{
+  &__list {
     background-color: $color-white;
     text-align: left;
-  &--item{
-    background-color: $color-white;
-    margin: 8px 8px;
-    @include flex(row, space-between, center, nowrap);
-  }
-  &--value{
-    margin-right: 0px;
-    border: 4px solid $color-lightgreen;
-    padding: 4px;
-    border-radius: 15px;
+    &--item {
+      background-color: $color-white;
+      margin: 8px 8px;
+      @include flex(row, space-between, center, nowrap);
     }
-  &--label{
-    border: 4px solid $color-lightgrey;
-    padding: 4px;
-    border-radius: 15px;
+    &--value {
+      margin-right: 0px;
+      border: 4px solid $color-lightgreen;
+      padding: 4px;
+      border-radius: 15px;
+    }
+    &--label {
+      border: 4px solid $color-lightgrey;
+      padding: 4px;
+      border-radius: 15px;
+    }
   }
+}
+
+.stocktechnical {
+  background-color: $color-white;
+  margin: 8px 0;
+  &__title {
+    font-size: 18px;
+    text-align: left;
+    background-color: $color-white;
+  }
+  &__list {
+    background-color: $color-white;
+    text-align: left;
+    &--item {
+      background-color: $color-white;
+      margin: 8px 8px;
+      @include flex(row, space-between, center, nowrap);
+    }
+    &--value {
+      margin-right: 0px;
+      border: 4px solid $color-lightgreen;
+      padding: 4px;
+      border-radius: 15px;
+    }
+    &--label {
+      border: 4px solid $color-lightgrey;
+      padding: 4px;
+      border-radius: 15px;
+    }
   }
 }
 
-.stocktechnical{
-  background-color: $color-white;
-margin: 8px 0;
-&__title{
-  font-size: 18px;
-  text-align: left;
-  background-color: $color-white;
-}
-&__list{
-  background-color: $color-white;
-  text-align: left;
-&--item{
-  background-color: $color-white;
-  margin: 8px 8px;
-  @include flex(row, space-between, center, nowrap);
-}
-&--value{
-  margin-right: 0px;
-  border: 4px solid $color-lightgreen;
-  padding: 4px;
-  border-radius: 15px;
-  }
-&--label{
-  border: 4px solid $color-lightgrey;
-  padding: 4px;
-  border-radius: 15px;
-}
-}
-}
-
-
-
-.stockfundamental__button{
+.stockfundamental__button {
   margin: 32px 0;
   background-color: $color-lightgrey;
   @include flex(row, center, center, nowrap);
   height: 4vh;
   border-radius: 15px;
-  &-item{
+  &-item {
     width: 40%;
     height: 4vh;
     border: none;
   }
 }
 
-
-
-.stockfundamental__container{
+.stockfundamental__container {
   margin: 48px 16px;
   background-color: $color-white;
   border-radius: 15px;
@@ -91,7 +86,7 @@ margin: 8px 0;
   font-size: 16px;
 }
 
-.fundamental-button{
+.fundamental-button {
   background-color: $color-white;
   border: 1px solid $color-lightgrey;
   border-radius: 15px;
@@ -100,9 +95,9 @@ margin: 8px 0;
   font-size: 16px;
 }
 
-.technical-button{
+.technical-button {
   font-size: 16px;
-  &:hover{
+  &:hover {
     background-color: $color-white;
     border: 1px solid $color-lightgrey;
     border-radius: 15px;

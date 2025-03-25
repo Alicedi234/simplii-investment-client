@@ -3,20 +3,19 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.homepage__main{
+.homepage__main {
   width: 100%;
   max-width: 1200px;
   @include flex(column, center, center, nowrap);
 }
 
-.homepage__main--button{
+.homepage__main--button {
   margin-left: 80%;
   @include flex(row, center, center, nowrap);
   margin-bottom: 20px;
-
 }
 
-.homepage__main--button-item{
+.homepage__main--button-item {
   background-color: $color-darkgreen;
   color: $color-white;
   margin-right: -20px;

@@ -3,11 +3,11 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.piechart{
+.piechart {
   width: 100%;
   max-width: 800px;
   padding: 16px;
-  &__chart{
+  &__chart {
     max-width: 600px;
     width: 80%;
     border: 1px solid white;
@@ -17,44 +17,44 @@
     background-color: $color-white;
     margin-left: 10%;
     @include flex(column, center, center, nowrap);
-    &--title{
+    &--title {
       font-size: 24px;
       text-align: center;
       margin-bottom: 20px;
       background-color: $color-white;
     }
   }
-  &__stockdata{
+  &__stockdata {
     border: 1px solid $color-white;
     background-color: $color-white;
     border-radius: 15px;
-    &--row{
+    &--row {
       @include flex(row, space-between, center, nowrap);
       background-color: $color-white;
     }
-    &__title{
+    &__title {
       margin-top: 48px;
       font-size: 24px;
       text-align: center;
       margin-bottom: 20px;
     }
-  &--label{
-    background-color: $color-white;
-    color: $color-grey;
-    margin: 4px 0;
-  }
-  &--value{
-    border:1px solid $color-darkgreen;
-    border-radius: 15px;
-    background-color: $color-forestgreen;
-    opacity: 0.8;
-    padding: 0px 8px;
-    color: $color-white;
-  }
+    &--label {
+      background-color: $color-white;
+      color: $color-grey;
+      margin: 4px 0;
+    }
+    &--value {
+      border: 1px solid $color-darkgreen;
+      border-radius: 15px;
+      background-color: $color-forestgreen;
+      opacity: 0.8;
+      padding: 0px 8px;
+      color: $color-white;
+    }
   }
 }
 
-.piechart__icon{
+.piechart__icon {
   width: 32px;
   position: absolute;
 }

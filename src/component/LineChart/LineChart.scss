@@ -3,7 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.linechart-container{
+.linechart-container {
   width: 100%;
   max-width: 700px;
   border: 1px solid white;
@@ -13,33 +13,33 @@
   background-color: $color-white;
   @include flex(column, center, center, nowrap);
   width: 100%;
-  &__title{
+  &__title {
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
     background-color: $color-white;
   }
-  &__icon{
+  &__icon {
     width: 28px;
     position: absolute;
   }
 }
 
-.linechart__button{
+.linechart__button {
   margin-top: 16px;
   width: 90%;
   height: 3vh;
   @include flex(row, center, center, nowrap);
   gap: 8px;
-  &--item{
-  border: 1px solid $color-lightgrey;
-  border-radius: 15px;
-  padding: 15px;
-  background-color: $color-white;
-  color: $color-black;
-  font-size: 14px;
-  width: 25%;
-  height: 2vh;
-  @include flex(row, center, center, nowrap);
-}
+  &--item {
+    border: 1px solid $color-lightgrey;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: $color-white;
+    color: $color-black;
+    font-size: 14px;
+    width: 25%;
+    height: 2vh;
+    @include flex(row, center, center, nowrap);
+  }
 }

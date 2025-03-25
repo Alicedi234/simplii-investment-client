@@ -1,8 +1,6 @@
 import "./Footer.scss";
-export default function Footer(){
-
-
-  return(
+export default function Footer() {
+  return (
     <div className="footer">
       <ul className="footer__nav">
         <li className="footer__nav-item">@Simplii Investment</li>
@@ -12,5 +10,5 @@ export default function Footer(){
         <li className="footer__nav-item">Privacy Policy</li>
       </ul>
     </div>
-  )
+  );
 }

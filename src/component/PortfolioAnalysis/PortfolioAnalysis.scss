@@ -3,34 +3,33 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-
-.analysis{
+.analysis {
   margin-left: 56px;
   border: 1px solid $color-bordergrey;
   border-radius: 15px;
   background-color: $color-white;
   padding: 20px;
-  &__title{
+  &__title {
     font-size: 24px;
     margin-bottom: 20px;
     margin-left: 56px;
     text-align: center;
   }
-  &__container{
+  &__container {
     width: 100%;
     max-width: 700px;
   }
-  &__row{
+  &__row {
     @include flex(row, space-between, center, nowrap);
     background-color: $color-white;
   }
-  &__label{
+  &__label {
     background-color: $color-white;
     color: $color-grey;
     margin: 4px 0;
   }
-  &__value{
-    border:1px solid $color-darkgreen;
+  &__value {
+    border: 1px solid $color-darkgreen;
     border-radius: 15px;
     background-color: $color-darkgreen;
     opacity: 0.8;
@@ -39,7 +38,7 @@
   }
 }
 
-.analysis__icon{
+.analysis__icon {
   width: 32px;
   position: absolute;
 }

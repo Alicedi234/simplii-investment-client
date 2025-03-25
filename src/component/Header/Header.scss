@@ -3,9 +3,9 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.header{
+.header {
   width: 100%;
-  &__nav{
+  &__nav {
     width: 100%;
     @include flex(row, space-evenly, center, nowrap);
     border: 1px solid $color-white;
@@ -14,45 +14,42 @@
     padding: 8px 24px;
     height: 5vh;
 
-    &--item{
+    &--item {
       border: 2px solid $color-forestgreen;
       border-radius: 25px;
       height: 5vh;
       @include flex(row, center, center, nowrap);
       background-color: $color-white;
       width: 40%;
-      &:active{
+      &:active {
         background-color: $color-darkgreen;
         color: $color-white;
       }
     }
-    &--text{
+    &--text {
       font-size: 20px;
       background-color: $color-white;
       color: $color-darkgreen;
       font-weight: 900;
-      &:active{
+      &:active {
         color: $color-white;
         background-color: $color-darkgreen;
       }
-
     }
-    &--link{
+    &--link {
       background-color: $color-white;
-      &:active{
+      &:active {
         background-color: $color-darkgreen;
         color: $color-white;
       }
     }
-    &--logo{
+    &--logo {
       background-color: $color-white;
     }
   }
-
 }
 
-#header__logo{
+#header__logo {
   width: 55px;
   height: 46px;
-
 }

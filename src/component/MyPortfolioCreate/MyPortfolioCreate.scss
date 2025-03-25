@@ -3,61 +3,58 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-
-.myportfolio{
+.myportfolio {
   width: 100%;
   background-color: $color-white;
   border: 1px solid $color-white;
   margin: 48px 16px;
   border-radius: 15px;
-  &__form{
+  &__form {
     background-color: $color-white;
     margin: 24px 0;
     @include flex(column, space-evenly, flex-start, nowrap);
   }
-  &__portfolio{
+  &__portfolio {
     @include flex(column, space-evenly, flex-start, nowrap);
     gap: 16px;
     padding: 16px;
     background-color: $color-white;
     width: 60%;
   }
-  &__stock{
+  &__stock {
     @include flex(column, space-evenly, flex-start, nowrap);
     gap: 16px;
     width: 90%;
     padding: 16px;
     background-color: $color-white;
   }
-  &__title{
+  &__title {
     font-size: 20px;
     font-weight: 600;
     margin: 8px 46px;
     background-color: $color-white;
   }
-  &__label{
+  &__label {
     font-size: 20px;
     background-color: $color-white;
-    
   }
-  &__input{
+  &__input {
     width: 90%;
     height: 3vh;
     border: 1px solid $color-grey;
     border-radius: 15px;
     padding: 8px;
-
   }
-  &__icon{
+  &__icon {
     width: 24px;
   }
-  &__button-container{
+  &__button-container {
     margin: 16px 24px;
     @include flex(column, space-between, flex-start, nowrap);
     background-color: $color-white;
     gap: 16px;
   }
-  &__button{
+  &__button {
     background-color: $color-darkgreen;
     color: $color-white;
     border: none;
@@ -66,15 +63,9 @@
     cursor: pointer;
   }
 }
-  
-  
-.maintitle{
+
+.maintitle {
   text-align: left;
   font-size: 36px;
   background-color: $color-white;
 }
-
-
-
-  
-  

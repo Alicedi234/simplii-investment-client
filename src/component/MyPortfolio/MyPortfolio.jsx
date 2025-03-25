@@ -42,7 +42,8 @@ export default function MyPortfolio() {
           <ul className="myportfoliolist__list">
             {portfolio.holdings.map((h, i) => (
               <li key={i} className="myportfoliolist__list--item">
-                {h.symbol} — {h.shares} shares @ ${h.buy_price} (${h.total_amount})
+                {h.symbol} — {h.shares} shares @ ${h.buy_price} ($
+                {h.total_amount})
               </li>
             ))}
           </ul>

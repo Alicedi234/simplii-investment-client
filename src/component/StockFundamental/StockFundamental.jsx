@@ -41,20 +41,23 @@ export default function StockFundamental({ symbol }) {
 
   return (
     <div className="stockfundamental__container">
-        <div className="stockfundamental__button">
-      <button onClick={() => setShowFundamentals(!showFundamentals)}
-        className = "stockfundamental__button-item fundamental-button">
-        {showFundamentals ? "Hide Fundamentals" : "ShowFundamentals"}
-      </button>
+      <div className="stockfundamental__button">
+        <button
+          onClick={() => setShowFundamentals(!showFundamentals)}
+          className="stockfundamental__button-item fundamental-button"
+        >
+          {showFundamentals ? "Hide Fundamentals" : "ShowFundamentals"}
+        </button>
 
-      <button onClick={() => setShowTechnicals(!showTechnicals)}
-        className = "stockfundamental__button-item technical-button">
-        {showTechnicals
-          ? "Hide Technical Indicators"
-          : "Show Technical Indicators"}
-      </button>
-
-          </div>
+        <button
+          onClick={() => setShowTechnicals(!showTechnicals)}
+          className="stockfundamental__button-item technical-button"
+        >
+          {showTechnicals
+            ? "Hide Technical Indicators"
+            : "Show Technical Indicators"}
+        </button>
+      </div>
 
       {showFundamentals && (
         <div className="stockfundamental">
@@ -63,7 +66,7 @@ export default function StockFundamental({ symbol }) {
           </h2>
           <ul className="stockfundamental__list">
             <li className="stockfundamental__list--item">
-               <span className="stockfundamental__list--label">Symbol</span>
+              <span className="stockfundamental__list--label">Symbol</span>
               <span className="stockfundamental__list--value">
                 {fundadata.symbol}
               </span>
@@ -99,7 +102,9 @@ export default function StockFundamental({ symbol }) {
               </span>
             </li>
             <li className="stockfundamental__list--item">
-              <span className="stockfundamental__list--label">Dividend Yield</span>
+              <span className="stockfundamental__list--label">
+                Dividend Yield
+              </span>
               <span className="stockfundamental__list--value">
                 {fundadata.dividendYield}
               </span>

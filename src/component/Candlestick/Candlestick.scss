@@ -11,7 +11,7 @@
   padding: 16px;
   background-color: $color-white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  @include flex(column, center, center,nowrap);
+  @include flex(column, center, center, nowrap);
 }
 
 .candlestick-__loading {
@@ -20,13 +20,13 @@
   padding-top: 2rem;
 }
 
-.candlestick__button{
+.candlestick__button {
   margin-top: 16px;
   width: 90%;
   height: 3vh;
   @include flex(row, center, center, nowrap);
   gap: 8px;
-  &--item{
+  &--item {
     border: 1px solid $color-lightgrey;
     border-radius: 15px;
     padding: 15px;
@@ -36,7 +36,5 @@
     width: 25%;
     height: 2vh;
     @include flex(row, center, center, nowrap);
-    
-
   }
 }

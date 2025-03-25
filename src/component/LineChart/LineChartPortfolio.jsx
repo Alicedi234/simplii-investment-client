@@ -17,12 +17,12 @@ export default function PortfolioLineChart() {
 
   const baseUrl = import.meta.env.VITE_PORTFOLIO_API_BASE_URL;
 
-
-
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await axios.get(`${baseUrl}/api/myportfolio/${portfolioId}/history`);
+        const response = await axios.get(
+          `${baseUrl}/api/myportfolio/${portfolioId}/history`
+        );
         setHistory(response.data);
       } catch (err) {
         setError("Failed to load portfolio history.");
@@ -37,7 +37,9 @@ export default function PortfolioLineChart() {
   if (loading) return <p>Loading chart...</p>;
   if (error) return <p>{error}</p>;
 
-  const sorted = [...history].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const sorted = [...history].sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+  );
 
   const chartData = {
     labels: sorted.map((d) => new Date(d.date)),
@@ -93,9 +95,9 @@ export default function PortfolioLineChart() {
 
   return (
     <div className="linechart-container">
-      <h2 className="linechart-container__title">Portfolio Value Over Time
-        <img src={color3} alt="" className="linechart-container__icon"/>
-
+      <h2 className="linechart-container__title">
+        Portfolio Value Over Time
+        <img src={color3} alt="" className="linechart-container__icon" />
       </h2>
       <ReactChart type="line" data={chartData} options={options} />
     </div>

@@ -3,26 +3,24 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-
-.myportfoliolist{
+.myportfoliolist {
   width: 80%;
   margin: 48px 16px;
-  border:1px solid $color-white;
+  border: 1px solid $color-white;
   background-color: $color-white;
-  &__title{
+  &__title {
     font-size: 24px;
     background-color: $color-white;
     padding: 16px;
   }
-  &__container{
+  &__container {
     margin: 16px 16px;
     border: 1px solid $color-forestgreen;
     border-radius: 15px;
     @include flex(column, space-evenly, flex-start, nowrap);
     padding: 16px;
   }
-  &__name{
+  &__name {
     font-size: 20px;
   }
-
 }
