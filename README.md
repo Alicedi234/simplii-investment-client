@@ -1,3 +1,8 @@
+.env
+VITE_STOCK_API_BASE_URL=http://127.0.0.1:8000/api
+VITE_PORTFOLIO_API_BASE_URL = http://localhost:8080
+
+
 # castone-simplii-finance
 # Project Title
 Simplii Investment
